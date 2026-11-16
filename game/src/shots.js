@@ -101,6 +101,7 @@ export function poseShot(state, name) {
     state.stats = { kills: 132, shots: 640, hits: 402, time: 245 };
     p.x = 470;
     p.y = 285;
+    p.hull = 0;
     p.alive = false;
     place(state, 'shard', 295, 155);
     place(state, 'darter', 665, 385);
