@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRISM BREAK — a neon arena survival shooter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="stage">
+  <canvas id="game" width="960" height="540"></canvas>
+
+  <div id="hud">
+    <div class="hud-left">
+      <div class="hud-block"><label>SCORE</label><span id="hud-score">0</span></div>
+      <div class="hud-block"><label>WAVE</label><span id="hud-wave">—</span></div>
+      <div class="hud-block"><label>SHARDS</label><span id="hud-shards">0</span></div>
+    </div>
+    <div class="hud-right">
+      <div class="hud-block hull">
+        <label>HULL</label>
+        <div class="hull-bar"><div id="hud-hull-fill"></div></div>
+        <span id="hud-hull-text">100 / 100</span>
+      </div>
+      <div class="hud-block"><span id="hud-dash">DASH READY</span></div>
+    </div>
+  </div>
+
+  <section id="overlay-title" class="overlay">
+    <h1>PRISM<span>BREAK</span></h1>
+    <p class="tagline">The prisms have turned. You are the last ship in the arena.<br>Survive 15 waves, break the Warden Prism, and take the swarm apart piece by piece.</p>
+    <div class="controls">
+      <div><b>WASD / Arrows</b> move</div>
+      <div><b>Mouse</b> aim &nbsp;·&nbsp; <b>Click / hold</b> fire</div>
+      <div><b>Shift / Space / Right-click</b> dash (briefly untouchable)</div>
+      <div><b>P</b> pause &nbsp;·&nbsp; <b>M</b> mute</div>
+    </div>
+    <button id="btn-start" class="big-btn">▶ &nbsp;ENTER THE ARENA</button>
+    <p id="title-best" class="best"></p>
+    <p class="hint">Between waves, draft one upgrade: cannons, lance rounds, plating, nanites… build your ship your way.</p>
+  </section>
+
+  <section id="overlay-draft" class="overlay">
+    <h2>WAVE CLEARED</h2>
+    <p class="tagline">Choose one upgrade — the next wave is already forming.</p>
+    <div id="draft-cards"></div>
+  </section>
+
+  <section id="overlay-pause" class="overlay">
+    <h2>PAUSED</h2>
+    <button id="btn-resume" class="big-btn">RESUME</button>
+    <button id="btn-pause-restart" class="ghost-btn">RESTART RUN</button>
+  </section>
+
+  <section id="overlay-win" class="overlay">
+    <h2 class="win-title">THE PRISM BREAKS</h2>
+    <p class="tagline">Wave 15 cleared — the arena is yours. Keep going in endless mode, or run it again.</p>
+    <div id="win-stats" class="stats"></div>
+    <button id="btn-win-continue" class="big-btn">CONTINUE — ENDLESS</button>
+    <button id="btn-win-restart" class="ghost-btn">NEW RUN</button>
+  </section>
+
+  <section id="overlay-over" class="overlay">
+    <h2 class="over-title">SHIP DOWN</h2>
+    <p class="tagline">The swarm keeps the arena — this time.</p>
+    <div id="over-stats" class="stats"></div>
+    <button id="btn-restart" class="big-btn">↻ &nbsp;RUN IT AGAIN</button>
+    <p class="hint">Press <b>R</b> to restart instantly.</p>
+  </section>
+</main>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
